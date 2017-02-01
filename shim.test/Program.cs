@@ -17,9 +17,18 @@ namespace shim.test
 
     public class TargetClass
     {
+        
+        
+
         public DateTime DoSomething()
         {
-            return DateTime.Now;
+            return new ShimClass().Now;
         }
     }
+
+    public class ShimClass
+    {
+        public DateTime Now { get {return DateTime.Now; } }
+    }
+
 }
